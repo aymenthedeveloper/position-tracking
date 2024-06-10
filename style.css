@@ -14,3 +14,6 @@ button {
   cursor: pointer;
   padding: 10px 8px;
 }
+button.start{
+  background-color: green;
+}
