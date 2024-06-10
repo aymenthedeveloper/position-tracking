@@ -4,6 +4,7 @@ const end = document.querySelector('button.end');
 const i = { 'lan': 3.109384, 'lat': 36.737495 };
 const j = { 'lan': 3.104750, 'lat': 36.732378 };
 const path = [];
+const dist = 0;
 
 const toRadians = degrees => degrees * (Math.PI / 180);
 const getCoordinates = position => {
@@ -40,8 +41,15 @@ function startTracking() {
         if (arr[i+1] === undefined) return 0;
         return calculateDistance(arr[i],arr[i+1])
       });
-      console.log(distance.reduce((a,b) => a+b));
+      dist = distance.reduce((a,b) => a+b);
+      console.log(dist);
     };
   }, 4000)
   return path
 };
+start.addEventListener('click', () => {
+  startTracking();
+})
+end.addEventListener('click', () => {
+  endTracking = true;
+})
